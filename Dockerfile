@@ -8,6 +8,6 @@ WORKDIR /var/www/html
 COPY ./src ./
 
 RUN chmod 755 *;
-EXPOSE 80
+EXPOSE 8888
 
 CMD ["php", "-S", "0.0.0.0:80"]
