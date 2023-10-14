@@ -51,13 +51,12 @@
 
                                     <?php if ($_SESSION['auth_manager']->verifyScopes(["d_all_prodotti"], false)) :?>
                                     <!-- DELETE -->
-                                    <a
+                                        <a
                                                 class="btn btn-danger delete_btn"
-                                                id="delete-button"
                                                 data-toggle="modal"
                                                 data-target="#delete-modal"
                                                 data-del_id_prodotto="<?php echo $prodotto["id"];?>"
-                                    ><i class="fas fa-trash"></i></a>
+                                        ><i class="fas fa-trash"></i></a>
                                     <?php endif ?>
                                 </td>
                             <?php endif ?>
@@ -103,12 +102,14 @@
 <!-- //Delete Confirmation Modal -->
 
 <script>
-    const deleteButton = document.querySelector('#delete-button');
+    const deleteButtons = document.querySelectorAll('.delete_btn');
 
-    deleteButton.addEventListener('click', function () {
-        document.getElementById('del_id_prodotto').value = deleteButton.getAttribute('data-del_id_prodotto');
+    deleteButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            document.getElementById('del_id_prodotto').value = button.getAttribute('data-del_id_prodotto');
 
-        const deleteModal = document.querySelector('#delete-modal');
-        deleteModal.style.display = 'block';
+            const deleteModal = document.querySelector('#delete-modal');
+            deleteModal.style.display = 'block';
+        });
     });
 </script>
