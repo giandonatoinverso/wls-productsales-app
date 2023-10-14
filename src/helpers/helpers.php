@@ -3,15 +3,15 @@
 function clearAuthCookies() {
 	unset($_COOKIE['refreshToken']);
 	unset($_COOKIE['refreshTokenExpiration']);
-	setcookie('refreshToken', null, -1, '/');
-	setcookie('refreshTokenExpiration', null, -1, '/');
+    setcookie('refreshToken', '', time() - 3600, '/');
+    setcookie('refreshTokenExpiration', '', time() - 3600, '/');
 }
 
 function clearUserCookies() {
     unset($_COOKIE['userData']);
     unset($_COOKIE['scopes']);
-    setcookie('userData', null, -1, '/');
-    setcookie('scopes', null, -1, '/');
+    setcookie('userData', '', time() - 3600, '/');
+    setcookie('scopes', '', time() - 3600, '/');
 }
 
 function base_url(){
@@ -22,3 +22,4 @@ function base_url(){
         $_SERVER['SERVER_PORT']
     );
 }
+?>

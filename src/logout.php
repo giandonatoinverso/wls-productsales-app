@@ -13,5 +13,4 @@ if(isset($_COOKIE['userData']) && isset($_COOKIE['scopes'])){
 
 header('Location: index.php');
 exit;
-
- ?>
+?>
