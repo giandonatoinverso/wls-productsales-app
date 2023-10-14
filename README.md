@@ -4,7 +4,6 @@ PHP application of a basic wholesaling ERP that allows users to authenticate wit
 You can use the example docker compose file that creates the complete stack
 
 ```bash
-git clone <this_repository>
 docker compose build --no-cache && docker compose -p wslStack up -d
 ```
 
@@ -21,10 +20,4 @@ Browse to http://localhost:8888 and login with those accounts:
   - user@company.com
   - user
 
-After login, based on the user you can test each functionality provided thanks to the backend API present in the same OAuth server: https://github.com/giandonatoinverso/wls-backend-server 
-
-# Development
-
-```bash
-task publish-docker
-```
+After login, based on the user you can test each functionality provided thanks to the backend API present in the same OAuth server: https://github.com/giandonatoinverso/wls-backend-server
