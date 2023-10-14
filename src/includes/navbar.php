@@ -24,7 +24,7 @@
             <i class="fa fa-cog"></i> Settings
           </a>
           <div class="dropdown-divider"></div>-->
-            <?php if(isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in']) { ?>
+            <?php if(isset($_COOKIE['refreshToken']) && isset($_COOKIE['refreshTokenExpiration']) && isset($_COOKIE['userData']) && isset($_COOKIE['scopes'])) { ?>
               <a href="./logout.php" class="dropdown-item">
                 <i class="fas fa-sign-out-alt"></i> Logout
               </a>
