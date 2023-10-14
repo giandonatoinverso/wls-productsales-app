@@ -7,9 +7,8 @@ session_start();
 if($_SERVER["REQUEST_METHOD"] !== "GET")
     die("Method not allowed");
 
+$_SESSION['auth_manager'] = new AuthManager();
 if(isset($_GET["authorizationCodeEncoded"]) && isset($_GET["username"])) {
-    $_SESSION['auth_manager'] = new AuthManager();
-
     $result = $_SESSION['auth_manager']->exchangeAuthorizationCodeAccessToken(base64_decode($_GET["authorizationCodeEncoded"]));
     $_SESSION['auth_manager']->setScopes($result["accessToken"], $result["refreshTokenExpiration"]);
 
